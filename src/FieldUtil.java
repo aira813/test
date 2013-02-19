@@ -78,10 +78,10 @@ public class FieldUtil {
     }
 
 
-    public static boolean checkContinue(FieldState[][] field,int fieldLength){
-        for(int i=0;i<fieldLength;i++){
-            for(int j= 0;j<fieldLength;j++){
-                if(field[i][j] == FieldState.empty){
+    public static boolean checkContinue(FieldState[][] field){
+        for(FieldState[] fieldX: field){
+            for(FieldState fieldXY : fieldX){
+                if(fieldXY == FieldState.empty){
                     return true;
                 }
             }
