@@ -17,28 +17,35 @@ public class Battle {
     public void start() {
         FieldState winner = null;
         while (true) {
-            Address firstPlayerAddress = firstPlayer.next(field);
-            field[firstPlayerAddress.getX()][firstPlayerAddress.getY()] = FieldState.first;
+            put(firstPlayer,FieldState.first);
             FieldUtil.print(field);
-            winner = FieldUtil.isWin(field, fieldLength);
-            if (winner != null) {
-                System.out.println("winner is " + winner.getMark());
+            if(check()){
                 return;
             }
-            Address secondPlayerAddress = secondPlayer.next(field);
-            field[secondPlayerAddress.getX()][secondPlayerAddress.getY()] = FieldState.second;
+            put(secondPlayer,FieldState.second);
             FieldUtil.print(field);
-            winner = FieldUtil.isWin(field, fieldLength);
-            if (winner != null) {
-                System.out.println("winner is " + winner.getMark());
+            if(check()){
                 return;
             }
             if (!FieldUtil.checkContinue(field)) {
                 System.out.println("no more te");
                 return;
             }
-
         }
+    }
+
+    private void put(Player player,FieldState state){
+        Address firstPlayerAddress = firstPlayer.next(this.field);
+        field[firstPlayerAddress.getX()][firstPlayerAddress.getY()] = state;
+    }
+
+    private boolean check(){
+        FieldState winner = FieldUtil.isWin(this.field, this.fieldLength);
+        if (winner != null) {
+            System.out.println("winner is " + winner.getMark());
+            return true;
+        }
+        return false;
     }
 
     private void initField(int length) {
