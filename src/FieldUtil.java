@@ -34,9 +34,7 @@ public class FieldUtil {
                 if(field[i][j] == FieldState.empty){
                     break;
                 }
-                if(firstField == field[i][j]){
-                    continue;
-                }else {
+                if(firstField != field[i][j]){
                     break;
                 }
             }
@@ -54,9 +52,7 @@ public class FieldUtil {
                 if(field[j][i] == FieldState.empty){
                     break;
                 }
-                if(firstField == field[j][i]){
-                    continue;
-                }else {
+                if(firstField != field[j][i]){
                     break;
                 }
             }
@@ -73,9 +69,7 @@ public class FieldUtil {
             if(field[i][i] == FieldState.empty){
                 break;
             }
-            if(firstField == field[i][i]){
-                continue;
-            }else {
+            if(firstField != field[i][i]){
                 break;
             }
         }
@@ -91,9 +85,7 @@ public class FieldUtil {
             if(field[i][fieldLength-1-i] == FieldState.empty){
                 break;
             }
-            if(firstField == field[i][fieldLength-1-i]){
-                continue;
-            }else {
+            if(firstField != field[i][fieldLength-1-i]){
                 break;
             }
         }
