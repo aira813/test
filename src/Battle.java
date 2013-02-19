@@ -19,7 +19,7 @@ public class Battle {
         while (true) {
             Address firstPlayerAddress = firstPlayer.next(field);
             field[firstPlayerAddress.getX()][firstPlayerAddress.getY()] = FieldState.first;
-            FieldUtil.print(field, fieldLength);
+            FieldUtil.print(field);
             winner = FieldUtil.isWin(field, fieldLength);
             if (winner != null) {
                 System.out.println("winner is " + winner.getMark());
@@ -27,7 +27,7 @@ public class Battle {
             }
             Address secondPlayerAddress = secondPlayer.next(field);
             field[secondPlayerAddress.getX()][secondPlayerAddress.getY()] = FieldState.second;
-            FieldUtil.print(field, fieldLength);
+            FieldUtil.print(field);
             winner = FieldUtil.isWin(field, fieldLength);
             if (winner != null) {
                 System.out.println("winner is " + winner.getMark());

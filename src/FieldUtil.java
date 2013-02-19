@@ -1,11 +1,11 @@
 public class FieldUtil {
 
-    public static void print(FieldState[][] field,int fieldLength){
+    public static void print(FieldState[][] field){
         //print field
         System.out.println("-----");
-        for(int i = 0; i<fieldLength;i++){
-            for(int j = 0;j<fieldLength;j++){
-                System.out.print(field[i][j].getMark());
+        for(FieldState[] fieldX : field){
+            for(FieldState fieldXY : fieldX){
+                System.out.print(fieldXY.getMark());
             }
             System.out.println("");
         }
