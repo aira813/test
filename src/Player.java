@@ -4,7 +4,6 @@ public abstract class Player {
 
     public Player(String name){
         this.name = name;
-
     }
 
     abstract Address next(FieldState[][] field);
