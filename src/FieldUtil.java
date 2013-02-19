@@ -12,7 +12,7 @@ public class FieldUtil {
         System.out.println("-----");
     }
 
-    public static boolean isWin(FieldState[][] field,int fieldLength) {
+    public static FieldState isWin(FieldState[][] field,int fieldLength) {
         //tate
         for(int i = 0;i<fieldLength;i++){
             FieldState firstField = field[i][0];
@@ -26,10 +26,7 @@ public class FieldUtil {
                 }
             }
             if(j == fieldLength){
-                System.out.println("winner is ");
-
-                System.out.print(firstField.getMark());
-                return true;
+                return firstField;
             }
         }
         //yoko
@@ -45,9 +42,7 @@ public class FieldUtil {
                 }
             }
             if(j == fieldLength){
-                System.out.println("winner is ");
-                System.out.print(firstField.getMark());
-                return true;
+                return firstField;
             }
         }
         //naname
@@ -62,9 +57,7 @@ public class FieldUtil {
             }
         }
         if(i == fieldLength){
-            System.out.println("winner is ");
-            System.out.print(firstField.getMark());
-            return true;
+            return firstField;
         }
 
         firstField = field[0][fieldLength-1];
@@ -78,12 +71,10 @@ public class FieldUtil {
             }
         }
         if(i == fieldLength){
-            System.out.println("winner is ");
-            System.out.print(firstField.getMark());
-            return true;
+            return firstField;
         }
 
-        return false;
+        return null;
     }
 
 
