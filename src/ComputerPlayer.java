@@ -6,16 +6,20 @@ public class ComputerPlayer extends Player {
     }
 
     @Override
-    Address next(FieldState[][] field, int fieldLength) {
-        for(int i = 0;i<fieldLength;i++){
-            for(int j = 0;j<fieldLength;j++){
-                if(field[i][j] == FieldState.empty){
+    Address next(FieldState[][] field) {
+        int i = 0;
+        for(FieldState[] fieldX: field){
+            int j = 0;
+            for (FieldState fieldXY: fieldX){
+                if(fieldXY == FieldState.empty){
                     Address address = new Address();
                     address.setX(i);
                     address.setY(j);
                     return address;
                 }
+                j++;
             }
+            i++;
         }
         return null;
     }

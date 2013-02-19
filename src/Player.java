@@ -7,6 +7,5 @@ public abstract class Player {
 
     }
 
-
-    abstract Address next(FieldState[][] field,int fieldLength);
+    abstract Address next(FieldState[][] field);
 }
