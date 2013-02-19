@@ -33,7 +33,7 @@ public class Battle {
                 System.out.println("winner is " + winner.getMark());
                 return;
             }
-            if (!FieldUtil.checkContinue(field, fieldLength)) {
+            if (!FieldUtil.checkContinue(field)) {
                 System.out.println("no more te");
                 return;
             }
