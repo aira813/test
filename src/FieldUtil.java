@@ -5,25 +5,12 @@ public class FieldUtil {
         System.out.println("-----");
         for(int i = 0; i<fieldLength;i++){
             for(int j = 0;j<fieldLength;j++){
-                printMark(field[i][j]);
+                System.out.print(field[i][j].getMark());
             }
             System.out.println("");
         }
         System.out.println("-----");
     }
-
-    private static void printMark(FieldState state){
-        if(state == FieldState.empty){
-            System.out.print("　");
-        }
-        if(state == FieldState.first){
-            System.out.print("○");
-        }
-        if(state == FieldState.second){
-            System.out.print("×");
-        }
-    }
-
 
     public static boolean isWin(FieldState[][] field,int fieldLength) {
         //tate
@@ -40,7 +27,8 @@ public class FieldUtil {
             }
             if(j == fieldLength){
                 System.out.println("winner is ");
-                printMark(firstField);
+
+                System.out.print(firstField.getMark());
                 return true;
             }
         }
@@ -58,7 +46,7 @@ public class FieldUtil {
             }
             if(j == fieldLength){
                 System.out.println("winner is ");
-                printMark(firstField);
+                System.out.print(firstField.getMark());
                 return true;
             }
         }
@@ -75,7 +63,7 @@ public class FieldUtil {
         }
         if(i == fieldLength){
             System.out.println("winner is ");
-            printMark(firstField);
+            System.out.print(firstField.getMark());
             return true;
         }
 
@@ -91,7 +79,7 @@ public class FieldUtil {
         }
         if(i == fieldLength){
             System.out.println("winner is ");
-            printMark(firstField);
+            System.out.print(firstField.getMark());
             return true;
         }
 
